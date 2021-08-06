@@ -6,7 +6,7 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 
-
+const  {signup, signin, user } = require("./controllers/auth.controller")
 
 
 app.post("/signup", signup);
