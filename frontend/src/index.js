@@ -4,11 +4,19 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import socketIOClient from 'socket.io-client'
+import SocketContext from './Context/SocketContext';
+
+const ENDPOINT ="http://localhost:3001";
+
+const socket = socketIOClient(ENDPOINT)
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+    <SocketContext.Provider value={socket}>
       <App />
+      </SocketContext.Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
