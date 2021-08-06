@@ -4,6 +4,7 @@ import { Home } from './Home'
 import {NavBar } from './NavBar'
 import { Signin } from './Signin'
 import { Signup } from './Signup'
+import Stream from './Stream/Stream'
 
 export const Routes = () => {
     return (
@@ -13,11 +14,14 @@ export const Routes = () => {
                 <Route exact path="/">    
                     <Home/>
                 </Route>
-                <Route path="/signin">
+                <Route exact path="/signin">
                     <Signin/>
                 </Route>
-		        <Route path="/signup">
+		        <Route exact path="/signup">
                    <Signup/>
+                </Route>
+                <Route exact path="/chat">
+                  <Stream/>
                 </Route>
                 <Route>
                     <h3>
