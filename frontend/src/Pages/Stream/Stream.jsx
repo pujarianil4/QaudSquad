@@ -33,6 +33,10 @@ const Stream = () => {
         console.log(message)
         socket.emit("chatMessage",message)
     }
+
+    const handleExit=({username,socketId,group})=>{
+        socket.emit("userLeft",{username,socketId,group})
+    }
     return (
         <div>
              <>
@@ -42,7 +46,11 @@ const Stream = () => {
             <h3><i className="fas fa-users"></i> Users</h3>
             <ul id="users">
             {groupUsers.map(user =>(
+                <>
             <li>{user.username}</li>
+            <button onClick={()=>handleExit(user)}>Exit</button>
+           
+            </>
             ))}
             </ul>
             </div>
@@ -74,6 +82,8 @@ const Stream = () => {
                 Send
                 </button>
                 </form>
+
+           
 </div>
             </>
         </div>
