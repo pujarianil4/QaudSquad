@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import socketIOClient from 'socket.io-client'
 import SocketContext from './Context/SocketContext';
 
-const ENDPOINT ="http://localhost:3001";
+const ENDPOINT ="http://localhost:2244";
 
 const socket = socketIOClient(ENDPOINT)
 
