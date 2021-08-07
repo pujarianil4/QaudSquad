@@ -1,4 +1,4 @@
-import { Paper } from "@material-ui/core";
+import { Button, Paper } from "@material-ui/core";
 import React from "react";
 import styles from "./Post.module.css";
 const Post = () => {
@@ -6,10 +6,12 @@ const Post = () => {
     <div>
       <Paper className={styles.post}>
         <div className={styles.userinfo}>
-          <div className={styles.avatar}>A</div>
-          <div className={styles.userName}>
-            <h2>Anil Pujari</h2>
-            <p>Begginner</p>
+          <div className={styles.user}>
+            <div className={styles.avatar}>A</div>
+            <div className={styles.userName}>
+              <h2>Anil Pujari</h2>
+              <p>Begginner</p>
+            </div>
           </div>
           <div className={styles.live}>
             <h4>
@@ -32,6 +34,7 @@ const Post = () => {
             alt=""
           />
         </div>
+        <Button className={styles.button} variant="contained" color="primary">Join Event</Button>
       </Paper>
     </div>
   );
