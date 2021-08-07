@@ -1,51 +1,52 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+  margin: 0px;
+  padding: 0px;
 }
-.navbar{
-    display: flex;
-    justify-content: space-between;
-  
-    width: 100%;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
 }
-.logo{
-    width: 250px;
-    font-size: 30px;
-    cursor: pointer;
-    padding: 10px;
-    margin: 5px;
-    
-    padding: 0px;
+.logo {
+  width: 300px;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+  padding: 0px;
+  letter-spacing: 2px;
 }
-.logo span{
-    color: #37474F;
+.logo span {
+  color: #0c1263;
 }
-.menu{
-    display: flex;
-    border-left: 1px solid gray;
+.menu {
+  display: flex;
+  border-left: 1px solid gray;
 }
-.menu h6{
-    margin: 0px 10px;
-    cursor: pointer;
-   
-    padding-top: 10px;
+.menu h6 {
+  margin: 0px 10px;
+  cursor: pointer;
+
+  padding-top: 10px;
 }
 
-.login button{
-    padding-top: 10px;
+.login button {
+  padding-top: 10px;
 }
 
-.user{
-    position: relative;
+.user {
+  position: relative;
 }
 
-.user_profile{
-    position: absolute;
-    display: none;
+.user_profile {
+  position: absolute;
+  display: none;
 }
-.user_profile h5{
-    padding: 10px;
+.user_profile h5 {
+  padding: 10px;
 }
-.user_profile h5:hover{
-    background-color: rgb(230, 222, 222);
+.user_profile h5:hover {
+  background-color: rgb(230, 222, 222);
 }
