@@ -3,6 +3,7 @@ import React from 'react';
 import Post from '../Post/Post';
 import styles from "./AllPosts.module.css"
 const AllPosts = () => {
+   
     return (
         <div className={styles.container}>
             <div className={styles.filter} >

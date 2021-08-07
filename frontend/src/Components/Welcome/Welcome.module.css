@@ -29,3 +29,23 @@
 .image img {
   width: 60%;
 }
+
+.model_form{
+    width: 47%;
+    margin: auto;
+}
+
+.model_form textarea{
+    margin-top: 10px;
+}
+
+.model_form input{
+    background-color: white;
+    border: 1px solid gray;
+}
+
+.model_form button{
+    margin: 20px 0px;
+}
+
+

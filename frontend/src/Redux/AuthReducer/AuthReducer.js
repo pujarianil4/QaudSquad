@@ -1,4 +1,4 @@
-import { SIGNUP_REQUEST, SIGNUP_SUCCESS, USER_LOGOUT, USER_SIGNIN_SUCCESS } from "./AuthActionType";
+import { GETLIVECARDS, SIGNUP_REQUEST, SIGNUP_SUCCESS, USER_LOGOUT, USER_SIGNIN_SUCCESS } from "./AuthActionType";
 
 
 const initState={
@@ -6,7 +6,7 @@ const initState={
     token:JSON.parse(localStorage.getItem("codeToken")) || null,
     auth: JSON.parse(localStorage.getItem("codeUser")) || false ,
     isLoading: false,
-
+    liveCards:[]
 }
 
 export const AuthReducer= (state = initState,action)=>{
@@ -49,7 +49,13 @@ export const AuthReducer= (state = initState,action)=>{
                 token: null 
             }
         }
-            
+        case GETLIVECARDS:{
+          console.log(action);
+            return {
+                ...state,
+                liveCards:action.payload
+            }
+        } 
             
     
         default:{
