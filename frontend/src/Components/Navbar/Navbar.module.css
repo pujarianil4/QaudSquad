@@ -34,3 +34,18 @@
 .login button{
     padding-top: 10px;
 }
+
+.user{
+    position: relative;
+}
+
+.user_profile{
+    position: absolute;
+    display: none;
+}
+.user_profile h5{
+    padding: 10px;
+}
+.user_profile h5:hover{
+    background-color: rgb(230, 222, 222);
+}

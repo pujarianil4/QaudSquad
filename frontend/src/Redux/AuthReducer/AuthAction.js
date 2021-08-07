@@ -1,4 +1,4 @@
-import {SIGNUP_REQUEST, SIGNUP_SUCCESS, USER_SIGNIN_SUCCESS,USER_SIGNUP_SUCCESS} from "./AuthActionType"
+import {SIGNUP_REQUEST, SIGNUP_SUCCESS, USER_LOGOUT, USER_SIGNIN_SUCCESS,USER_SIGNUP_SUCCESS} from "./AuthActionType"
 import axios from "axios"
 export const SignInSuccess=(payload)=>{
     console.log(payload,"success");
@@ -19,6 +19,13 @@ export const SignUpSuccess=()=>{
    
     return{
         type: SIGNUP_SUCCESS,
+        
+    }
+}
+export const UserLogOut=()=>{
+   
+    return{
+        type: USER_LOGOUT,
         
     }
 }

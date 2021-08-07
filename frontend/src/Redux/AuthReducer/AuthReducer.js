@@ -1,4 +1,4 @@
-import { SIGNUP_REQUEST, SIGNUP_SUCCESS, USER_SIGNIN_SUCCESS } from "./AuthActionType";
+import { SIGNUP_REQUEST, SIGNUP_SUCCESS, USER_LOGOUT, USER_SIGNIN_SUCCESS } from "./AuthActionType";
 
 
 const initState={
@@ -17,6 +17,7 @@ export const AuthReducer= (state = initState,action)=>{
          
             localStorage.setItem("codeUser",JSON.stringify(action.payload.user))
             localStorage.setItem("codeToken",JSON.stringify(action.payload.token))
+            alert("SignIn Successfull !")
             return{
                 ...state,
              user: action.payload.user,
@@ -36,6 +37,16 @@ export const AuthReducer= (state = initState,action)=>{
             return {
                 ...state,
                 isLoading:false
+            }
+        }
+        case USER_LOGOUT:{
+              localStorage.removeItem("codeUser")
+              localStorage.removeItem("codeToken")
+              alert("LogOut Successfull !")
+            return{
+                ...state,
+                user:null,
+                token: null 
             }
         }
             
