@@ -35,12 +35,12 @@ io.on('connection',(socket)=>{
         socket.join(user.group)
 
         // Welcome the user to group
-        socket.emit("message",formateMessage(chatBotName,`Welcome to ${group} group`))
+        socket.emit("message",formateMessage(chatBotName,`Welcome to ${group[0].toUpperCase()+group.substring(1).toLowerCase()}`))
 
         // Send nortification to existing members ====Broadcast
 
         socket.broadcast.to(user.group)
-        .emit('message',formateMessage(chatBotName,`${user.username} has joined the chat`))
+        .emit('message',formateMessage(chatBotName,`${user.username[0].toUpperCase()+user.username.substring(1).toLowerCase()} has joined the chat`))
 
 
          //send list of users in the group
