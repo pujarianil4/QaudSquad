@@ -12,3 +12,8 @@
 .filter select{
     padding: 10px;
 }
+
+.all_posts {
+    display: flex;
+    justify-content: space-around;
+}
