@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
     email: {type: String, required: true, unique: true},
-    password: {type: String, required: true, minLength: 6},
+    password: {type: String, required: true, minLength: 5},
     name: {type: String, required: false},
     rating:[]
 }, {
@@ -24,7 +24,6 @@ userSchema.pre("save", function(next) {
 
 userSchema.methods.checkPassword = function (pass) {
     const passwordHash = this.password
-
     return new Promise ((resolve, reject) => {
         bcrypt.compare(pass, passwordHash, (err, same) => {
             if(err) return reject(err);
