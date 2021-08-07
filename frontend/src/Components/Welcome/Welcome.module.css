@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    height: 100vh;
 }
 
 .title{
@@ -28,3 +29,11 @@ text-shadow: 1px 1px gray;
 .image img{
     width: 60%;
 }
+
+.model_form{
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+}
+
+

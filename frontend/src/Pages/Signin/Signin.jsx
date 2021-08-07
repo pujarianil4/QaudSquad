@@ -25,10 +25,11 @@ const Signin = () => {
 		const [email2,setEmail2]=useState("")
 		const [password2,setPassword2]=useState("")
 	   const [name,setName]=useState("")
+	   const [twitch,setTwitch]=useState("")
 		 const handleSignUp=(e)=>{
 			
 			 e.preventDefault()
-			 dispatch(SignUpApi({email:email2,password:password2,name:name}))
+			 dispatch(SignUpApi({email:email2,password:password2,name:name,twitch:twitch}))
 		 }
 		 // ----------------------------------Sign In start-------------------------------//
 
@@ -47,6 +48,7 @@ const Signin = () => {
 			
 			<input value={name} onChange={(e)=>setName(e.target.value)} type="text" placeholder="Name" />
 			<input value={email2} onChange={(e)=>setEmail2(e.target.value)} type="email" placeholder="Email" />
+			<input value={twitch} onChange={(e)=>setTwitch(e.target.value)} type="text" placeholder="Twitch UserName" />
 			<input value={password2} onChange={(e)=>setPassword2(e.target.value)} type="password" placeholder="Password" />
 			<button onClick={handleSignUp}>Sign Up</button>
 		</form>
