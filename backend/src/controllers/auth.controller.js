@@ -11,7 +11,7 @@ const signup = async (req, res) => {
     try {
         const user = await User.create(req.body)
         let token = newToken(user)
-        return res.status(201).json({data: {token}})
+        return res.status(201).json({data: {user,token}})
     }
     catch (err) {
         return res 
@@ -59,7 +59,7 @@ const signin = async (req, res) => {
 
     const token  = newToken(user);
 
-    return res.status(201).json({data: {token}});
+    return res.status(201).json({data: {user,token}});
 }
 
 
@@ -67,13 +67,20 @@ const signin = async (req, res) => {
 //.select("-password")
 const user = async (req, res) => {
     const users = await User.find().lean().exec();
-    console.log(users)
+  
     return res.status(200).json({data: users})
+}
+
+const rating= async (req,res)=>{
+    const user =await User.findByIdAndUpdate(req.params.id,req.body,{new:true}).lean().exec()
+
+    return res.status(200).json({data:{user}})
 }
 
 module.exports = {
     signup,
     signin,
     user,
-    newToken
+    newToken,
+    rating
 }

@@ -8,7 +8,7 @@ const cors = require('cors')
 
 const {userJoin,getGroupUsers,getCurrentUser} = require('./utils/users')
 const {formateMessage} = require('./utils/message')
-const server = http.createServer()
+const server = http.createServer(app)
 
 const socketio = require('socket.io')
 // const { Socket } = require('dgram')
@@ -67,5 +67,6 @@ const PORT = 2244;
 
 server.listen(PORT,async()=>{
     await connect();
-    console.log("Listing on port 2244")
+ 
+   console.log(`listening to ${PORT}`);
 })

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
   const classes = useStyles();
-
+   
   return (
     <div className={classes.root}>
       <AppBar position="static" color="secondary">
