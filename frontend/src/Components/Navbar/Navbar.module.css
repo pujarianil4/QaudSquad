@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+  
+    width: 100%;
+}
+.logo{
+    width: 250px;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    
+    padding: 0px;
+}
+.logo span{
+    color: #37474F;
+}
+.menu{
+    display: flex;
+    border-left: 1px solid gray;
+}
+.menu h6{
+    margin: 0px 10px;
+    cursor: pointer;
+   
+    padding-top: 10px;
+}
+
+.login button{
+    padding-top: 10px;
+}
