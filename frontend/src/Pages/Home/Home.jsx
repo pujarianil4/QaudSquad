@@ -9,13 +9,13 @@ import { useHistory } from "react-router-dom";
 import Welcome from "../../Components/Welcome/Welcome";
 export const Home = () => {
   const [username, setUsername] = useState("");
-  const [group, setGroup] = useState("JavaSript");
+  const [group, setGroup] = useState("JavaScript");
   const socket = useContext(SocketContext);
   const history = useHistory();
   const joinGroupSubmitHandler = (e) => {
     socket.emit("joinGroup", { username, group });
     history.push({
-      pathname: "/chat",
+      pathname: "/videostream",
       state: { username, group },
     });
     console.log(group, username);
@@ -39,18 +39,14 @@ export const Home = () => {
         <Paper>
           <input type="text" onChange={(e) => setUsername(e.target.value)} />
 
-          <Button
-            onClick={joinGroupSubmitHandler}
-            varient="contained"
-            color="primary"
-          >
+          <Button onClick={joinGroupSubmitHandler} varient="contained" color="primary">
             Join Stream
           </Button>
         </Paper>
       </Modal>
-      
+
       <div className={styles.home}>
-         <Welcome/>
+        <Welcome />
       </div>
     </>
   );
