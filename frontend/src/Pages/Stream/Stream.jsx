@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import SocketContext from "../../Context/SocketContext";
-
+import SendIcon from "@material-ui/icons/Send";
 const Stream = () => {
   const [groupUsers, setGroupUsers] = useState([]);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  let [doubt, setDoubt] = useState(false);
+  let [mistake, setMistake] = useState(false);
   // const group= props.location.state.group
   // const username= props.location.state.username
   const socket = useContext(SocketContext);
@@ -58,17 +60,15 @@ const Stream = () => {
             ))}
           </ul> */}
         </div>
-        <div className="chat-nessages">
+        <MessagesCont className="chat-nessages">
           {messages.map((message) => (
-            <div>
-              <div>
-                {message.username} sent on {message.time}
-              </div>
-              <div>{message.text}</div>
-              <br></br>
-            </div>
+            <Message style={{ backgroundColor: `${doubt ? "blue" : mistake ? "red" : ""}` }}>
+              <UserName>{message.username}: </UserName> <Msg>{message.text}</Msg> <Time>{message.time}</Time>
+              {/* sent on */}
+              {/* <div></div> */}
+            </Message>
           ))}
-        </div>
+        </MessagesCont>
         <ChatInput className="chat-forn-container">
           <form id="chat-form" onSubmit={chatMessageSubmitHandler}>
             <input
@@ -80,12 +80,19 @@ const Stream = () => {
               onChange={(e) => setMessage(e.target.value)}
             />
             <button className="btn">
-              <i className="fa fa-paper-plane"></i>
-              Send
+              <SendIcon color="primary" fontSize="small" />
             </button>
           </form>
         </ChatInput>
       </>
+      <BtnCont>
+        <button onClick={() => setDoubt(!doubt)} style={{ backgroundColor: `${doubt ? "blue" : ""}` }}>
+          Doubt
+        </button>
+        <button onClick={() => setMistake(!mistake)} style={{ backgroundColor: `${mistake ? "red" : ""}` }}>
+          Mistake
+        </button>
+      </BtnCont>
     </ChatCont>
   );
 };
@@ -97,29 +104,97 @@ export default Stream;
 const ChatCont = styled.div`
   width: 95%auto;
   height: 90%;
-  border: 1px solid black;
+  box-shadow: 0px 0px 20px #5050509f;
+  border-radius: 20px;
+  padding: 10px;
 `;
 
 const ChatInput = styled.div`
   width: 100%;
   height: 10%;
-  border: 1px solid black;
-  position: relative;
-  top: 90%;
+  border-top: 1px solid lightgray;
   form {
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 100%;
+    flex-direction: row;
+    background-color: transparent;
     input {
       width: 80%;
       height: 60%;
       border-radius: 30px;
+      outline: none;
+      border: 3px solid gray;
+      padding-left: 10px;
     }
     button {
       width: 9%;
       height: 78%;
+      border: 3px solid gray;
+      outline: none;
       border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background-color: gray;
+        * {
+          color: white;
+        }
+      }
     }
+  }
+`;
+
+const MessagesCont = styled.div`
+  width: 100%;
+  height: 90%;
+  overflow: overlay;
+`;
+
+const Message = styled.div`
+  width: 98%;
+  min-height: 40px;
+  border: 1px solid gray;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20px;
+`;
+
+const UserName = styled.div`
+  width: 120px;
+  margin-left: 10px;
+  font-size: 14px;
+`;
+
+const Msg = styled.div`
+  font-size: 14px;
+  width: 280px;
+  margin-left: 15px;
+`;
+const Time = styled.div`
+  width: 50px;
+  margin-right: 5px;
+  color: gray;
+  font-size: 10px;
+`;
+
+const BtnCont = styled.div`
+  width: 60%;
+  height: 50px;
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  button {
+    width: 40%;
+    height: 70%;
+    border-radius: 10px;
+    border: 1px solid gray;
   }
 `;

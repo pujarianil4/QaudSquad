@@ -43,7 +43,6 @@ const MainCont = styled.div`
 const VideoCont = styled.div`
   width: 65%;
   height: 90%;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,8 +51,8 @@ const VideoCont = styled.div`
 
 const ChatCont = styled.div`
   width: 35%;
-  height: 90%;
-  border: 1px solid black;
+  height: 80%;
+  margin-top: 2%;
 `;
 
 const VideoPlayer = styled.div`
