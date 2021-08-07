@@ -21,8 +21,8 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
     const post = await Post.create(req.body);
-
-    return res.status(201).json({data: post})
+    const posts = await Post.find().lean().exec()
+    return res.status(201).json({data: posts})
 })
 
 router.patch("/:id/update", async (req, res) => {
