@@ -6,8 +6,7 @@ const postSchema = new mongoose.Schema({
     user: {type: mongoose.Schema.Types.ObjectId, ref: "user", required: true},
     category: {type: String, required: true},
     startFrom : {type: String, required: true},
-    level: {type: String, required: true},
-    twitchUserName: {type: String, required: true}    
+    level: {type: String, required: true},   
      
 }, {
     versionKey: false,
