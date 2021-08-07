@@ -50,6 +50,7 @@ const Stream = () => {
     }
     setDoubt(false);
     setMistake(false);
+    setMessage("");
   };
   console.log(color);
 
