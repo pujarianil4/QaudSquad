@@ -1,9 +1,11 @@
 import { Grid } from '@material-ui/core';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Post from '../Post/Post';
 import styles from "./AllPosts.module.css"
 const AllPosts = () => {
-   
+   const cards = useSelector(state => state.auth.liveCards)
+   console.log(cards)
     return (
         <div className={styles.container}>
             <div className={styles.filter} >
@@ -15,8 +17,9 @@ const AllPosts = () => {
              </select>
             </div>
             <div className={styles.all_posts}>
-                    <Post/>
-                    <Post/>
+                   {cards?.map(item => (
+                       <Post  item={item}/>
+                   ))}
             </div>
         </div>
     );

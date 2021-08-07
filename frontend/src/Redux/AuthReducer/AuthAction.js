@@ -46,7 +46,7 @@ export const SigninApi = (payload) => (dispatch) => {
 
 export const SignUpApi = (payload) => (dispatch) => {
   dispatch(SignUpReq());
-  console.log("payload", payload);
+  //console.log("payload", payload);
   return axios.post("http://localhost:2244/signup", payload).then((res) => {
     dispatch(SignUpSuccess());
   });
@@ -55,7 +55,7 @@ export const SignUpApi = (payload) => (dispatch) => {
 export const PostLiveCardsApi = (payload) => (dispatch) => {
   return axios.post("http://localhost:2244/posts", payload).then((res) => {
     dispatch(saveCards(res.data.data));
-    console.log(res.data.data);
+    //console.log(res.data.data);
   });
 };
 
