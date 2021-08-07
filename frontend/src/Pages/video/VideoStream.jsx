@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import Stream from "../Stream/Stream";
+import ReactLivestream from "react-livestream";
 export const VideoStream = () => {
+  let key = process.env.REACT_APP_STREAM_KEY;
+  // console.log(key);
   return (
     <>
       <MainCont>
         <VideoCont>
           <VideoPlayer>
-            <video src="https://www.youtube.com/watch?v=aibtHnbeuio"></video>
+            <iframe src={key} frameborder="0" allowfullscreen="true" scrolling="no" muted></iframe>
           </VideoPlayer>
           <Description>
             <h2>Learning React and Redux</h2>
@@ -31,7 +34,6 @@ const MainCont = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 70px;
   background-color: white;
   h2,
   h1,
@@ -65,12 +67,11 @@ const VideoPlayer = styled.div`
   background-color: #cec4c465;
   border-radius: 10px;
   box-shadow: 0px 0px 20px #5050509f;
-  video {
+  iframe {
     width: 95%;
     height: 95%;
     border-radius: 10px;
     border: 1px solid black;
-    background-color: #464646;
   }
 `;
 
