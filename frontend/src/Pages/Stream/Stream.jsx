@@ -105,7 +105,7 @@ export default Stream;
 const ChatCont = styled.div`
   width: 95%auto;
   height: 90%;
-  box-shadow: 0px 0px 20px #5050509f;
+  box-shadow: 0px 0px 20px #0e72ed6c;
   border-radius: 20px;
   padding: 10px;
 `;
@@ -125,13 +125,14 @@ const ChatInput = styled.div`
       height: 80%;
       border-radius: 30px;
       outline: none;
-      border: 2px solid gray;
+      border: 2px solid #0e72ed;
       padding-left: 10px;
+      background-color: white;
     }
     button {
       width: 9%;
       height: 78%;
-      border: 2px solid gray;
+      border: 2px solid #0e72ed;
       outline: none;
       border-radius: 50%;
       margin-left: 10px;
@@ -139,6 +140,7 @@ const ChatInput = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: white;
       &:hover {
         background-color: gray;
         * {
@@ -203,8 +205,9 @@ const BtnCont = styled.div`
     width: 40%;
     height: 70%;
     border-radius: 10px;
-    border: 1px solid gray;
+    border: 1px solid #0e72ed;
     cursor: pointer;
+    background-color: white;
     &:hover {
       transform: scale(1.1);
       transition: 0.5s ease;

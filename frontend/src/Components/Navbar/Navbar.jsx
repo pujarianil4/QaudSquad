@@ -10,40 +10,46 @@ import styles from "./Navbar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Paper } from "@material-ui/core";
 import { UserLogOut } from "../../Redux/AuthReducer/AuthAction";
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   title: {
     flexGrow: 1,
+    color: "#ffffff",
+  },
+  title2: {
+    color: "#ffffff",
+  },
+  navBar: {
+    backgroundColor: "#0e72ed",
   },
 }));
 
 export default function Navbar() {
   const classes = useStyles();
-   const user=useSelector((state)=> state.auth.user)
-   const [show,setShow]=useState({})
- const dispatch=useDispatch()
- const history= useHistory()
-   const handleLogOut=()=>{
-           dispatch(UserLogOut())
-          
-   }
-   
+  const user = useSelector((state) => state.auth.user);
+  const [show, setShow] = useState({});
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const handleLogOut = () => {
+    dispatch(UserLogOut());
+  };
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="secondary">
+      <AppBar position="static" className={classes.navBar}>
         <Toolbar>
-            <h5 className={styles.logo}> <span>C</span>ode <span>S</span>treamer</h5>
+          <h5 className={styles.logo}>
+            <span>C</span>ode <span>S</span>treamer
+          </h5>
           <div className={styles.navbar}>
             <div className={styles.menu}>
-              <Typography onClick={()=>history.push("/")} variant="h6" className={classes.title}>
+              <Typography onClick={() => history.push("/")} variant="h6" className={classes.title}>
                 Home
               </Typography>
               <Typography variant="h6" className={classes.title}>
@@ -51,20 +57,25 @@ export default function Navbar() {
               </Typography>
             </div>
             <div className={styles.login}>
-              {
-                user? <div onMouseEnter={()=>setShow({display:"block"})} onMouseLeave={()=>setShow({})} className={styles.user}>
+              {user ? (
+                <div
+                  onMouseEnter={() => setShow({ display: "block" })}
+                  onMouseLeave={() => setShow({})}
+                  className={styles.user}
+                >
                   <Button color="inherit">{user?.name}</Button>
                   <div style={show} className={styles.user_profile}>
                     <Paper>
                       <h5>PROFILE</h5>
                       <h5 onClick={handleLogOut}>LOG OUT</h5>
                     </Paper>
-
                   </div>
-                </div> :   <Button onClick={()=>history.push("/signin")} color="inherit">Login</Button>
-              }
-         
-
+                </div>
+              ) : (
+                <Button onClick={() => history.push("/signin")} className={classes.title2}>
+                  Login
+                </Button>
+              )}
             </div>
           </div>
         </Toolbar>
