@@ -8,6 +8,7 @@ const Stream = () => {
   const [messages, setMessages] = useState([]);
   let [doubt, setDoubt] = useState(false);
   let [mistake, setMistake] = useState(false);
+  let [color, setColor] = useState([]);
   // const group= props.location.state.group
   // const username= props.location.state.username
   const socket = useContext(SocketContext);
@@ -32,40 +33,39 @@ const Stream = () => {
   };
   const chatMessageSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(message);
+    // console.log(message);
     socket.emit("chatMessage", message);
+    if (doubt) {
+      let p = {
+        message: message,
+        color: "#99ffff",
+      };
+      setColor([...color, p]);
+    } else if (mistake) {
+      let p = {
+        message: message,
+        color: "  #99ff99",
+      };
+      setColor([...color, p]);
+    }
+    setDoubt(false);
+    setMistake(false);
   };
+  console.log(color);
 
   //   const handleExit = ({ username, socketId, group }) => {
   //     socket.emit("userLeft", { username, socketId, group });
   //   };
   //   console.log(messages);
+
   return (
     <ChatCont>
       <>
-        <div className="chat-sidebar">
-          {/* <h3>
-            <i className="fas fa-comments"></i> Group Name:{" "}
-          </h3>
-          <h2 id="roon-name">{"My group"}</h2>
-          <h3>
-            <i className="fas fa-users"></i> Users
-          </h3> */}
-          {/* <ul id="users">
-            {groupUsers.map((user) => (
-              <>
-                <li>{user.username}</li>
-                <button onClick={() => handleExit(user)}>Exit</button>
-              </>
-            ))}
-          </ul> */}
-        </div>
+        {/* <div className="chat-sidebar"></div> */}
         <MessagesCont className="chat-nessages">
-          {messages.map((message) => (
-            <Message style={{ backgroundColor: `${doubt ? "blue" : mistake ? "red" : ""}` }}>
+          {messages.map((message, i) => (
+            <Message color={color.map((item, i) => (item.message == message.text ? item.color : ""))} key={i + 1}>
               <UserName>{message.username}: </UserName> <Msg>{message.text}</Msg> <Time>{message.time}</Time>
-              {/* sent on */}
-              {/* <div></div> */}
             </Message>
           ))}
         </MessagesCont>
@@ -86,11 +86,11 @@ const Stream = () => {
         </ChatInput>
       </>
       <BtnCont>
-        <button onClick={() => setDoubt(!doubt)} style={{ backgroundColor: `${doubt ? "blue" : ""}` }}>
-          Doubt
+        <button onClick={() => setDoubt(!doubt)} style={{ backgroundColor: `${doubt ? "#99ffff" : ""}` }}>
+          Question
         </button>
-        <button onClick={() => setMistake(!mistake)} style={{ backgroundColor: `${mistake ? "red" : ""}` }}>
-          Mistake
+        <button onClick={() => setMistake(!mistake)} style={{ backgroundColor: `${mistake ? "#99ff99" : ""}` }}>
+          Suggestion
         </button>
       </BtnCont>
     </ChatCont>
@@ -119,21 +119,21 @@ const ChatInput = styled.div`
     justify-content: space-around;
     height: 100%;
     flex-direction: row;
-    background-color: transparent;
     input {
-      width: 80%;
-      height: 60%;
+      width: 90%;
+      height: 80%;
       border-radius: 30px;
       outline: none;
-      border: 3px solid gray;
+      border: 2px solid gray;
       padding-left: 10px;
     }
     button {
       width: 9%;
       height: 78%;
-      border: 3px solid gray;
+      border: 2px solid gray;
       outline: none;
       border-radius: 50%;
+      margin-left: 10px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -142,6 +142,7 @@ const ChatInput = styled.div`
         background-color: gray;
         * {
           color: white;
+          transition: 0.9s ease;
         }
       }
     }
@@ -152,17 +153,23 @@ const MessagesCont = styled.div`
   width: 100%;
   height: 90%;
   overflow: overlay;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Message = styled.div`
   width: 98%;
-  min-height: 40px;
-  border: 1px solid gray;
+  min-height: 35px;
+  /* border: 1px solid ${(prop) => prop.color}; */
+  border: 1px solid lightgray;
   margin: 5px 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-radius: 20px;
+  border-radius: 8px;
+  background-color: ${(prop) => prop.color};
+  /* background-color: #99ffff; */
 `;
 
 const UserName = styled.div`
@@ -196,5 +203,10 @@ const BtnCont = styled.div`
     height: 70%;
     border-radius: 10px;
     border: 1px solid gray;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.5s ease;
+    }
   }
 `;
