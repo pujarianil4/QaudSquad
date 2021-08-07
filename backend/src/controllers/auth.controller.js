@@ -8,6 +8,7 @@ const newToken = (user) => {
 }
 
 const signup = async (req, res) => {
+    
     try {
         const user = await User.create(req.body)
         let token = newToken(user)
@@ -16,11 +17,12 @@ const signup = async (req, res) => {
     catch (err) {
         return res 
             .status(500)
-            .json({status: "failed", meaasage: "something went wrong"})
+            .json({status: "failed", meaasage: err.message})
     }
 }
 
 const signin = async (req, res) => {
+    console.log(req.body)
     let user;
     try{
         user = await User.findOne({email: req.body.email}).exec()
@@ -71,6 +73,26 @@ const user = async (req, res) => {
     return res.status(200).json({data: users})
 }
 
+const userbyId = async (req, res) => {
+    console.log(req.params.id)
+    try{
+        const post = await User.findById(req.params.id).lean().exec();
+        res.status(200).json({post})
+    } catch (err) {
+        res.status(400).json({message: err.message})
+    }
+}
+
+const deleteUser = async (req, res) => {
+    try {
+        const post = await Post.findByIdAndDelete(req.params.id)
+        res.status(204).json({post})
+    } catch (err) {
+        res.status(400).json({message: err.message})
+
+    }
+}
+
 const rating= async (req,res)=>{
     const user =await User.findByIdAndUpdate(req.params.id,req.body,{new:true}).lean().exec()
 
@@ -82,5 +104,7 @@ module.exports = {
     signin,
     user,
     newToken,
-    rating
+    rating,
+    userbyId, 
+    deleteUser
 }
