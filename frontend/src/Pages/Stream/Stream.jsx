@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import styled from "styled-components";
 import SocketContext from "../../Context/SocketContext";
 
 const Stream = () => {
@@ -33,28 +34,29 @@ const Stream = () => {
     socket.emit("chatMessage", message);
   };
 
-  const handleExit = ({ username, socketId, group }) => {
-    socket.emit("userLeft", { username, socketId, group });
-  };
+  //   const handleExit = ({ username, socketId, group }) => {
+  //     socket.emit("userLeft", { username, socketId, group });
+  //   };
+  //   console.log(messages);
   return (
-    <div>
+    <ChatCont>
       <>
         <div className="chat-sidebar">
-          <h3>
+          {/* <h3>
             <i className="fas fa-comments"></i> Group Name:{" "}
           </h3>
           <h2 id="roon-name">{"My group"}</h2>
           <h3>
             <i className="fas fa-users"></i> Users
-          </h3>
-          <ul id="users">
+          </h3> */}
+          {/* <ul id="users">
             {groupUsers.map((user) => (
               <>
                 <li>{user.username}</li>
                 <button onClick={() => handleExit(user)}>Exit</button>
               </>
             ))}
-          </ul>
+          </ul> */}
         </div>
         <div className="chat-nessages">
           {messages.map((message) => (
@@ -67,7 +69,7 @@ const Stream = () => {
             </div>
           ))}
         </div>
-        <div className="chat-forn-container">
+        <ChatInput className="chat-forn-container">
           <form id="chat-form" onSubmit={chatMessageSubmitHandler}>
             <input
               id="msg"
@@ -82,10 +84,42 @@ const Stream = () => {
               Send
             </button>
           </form>
-        </div>
+        </ChatInput>
       </>
-    </div>
+    </ChatCont>
   );
 };
 
 export default Stream;
+
+//styled-components
+
+const ChatCont = styled.div`
+  width: 95%auto;
+  height: 90%;
+  border: 1px solid black;
+`;
+
+const ChatInput = styled.div`
+  width: 100%;
+  height: 10%;
+  border: 1px solid black;
+  position: relative;
+  top: 90%;
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    input {
+      width: 80%;
+      height: 60%;
+      border-radius: 30px;
+    }
+    button {
+      width: 9%;
+      height: 78%;
+      border-radius: 50%;
+    }
+  }
+`;
