@@ -7,7 +7,7 @@ export const VideoStream = () => {
       <MainCont>
         <VideoCont>
           <VideoPlayer>
-            <video src=""></video>
+            <video src="https://www.youtube.com/watch?v=aibtHnbeuio"></video>
           </VideoPlayer>
           <Description>
             <h2>Learning React and Redux</h2>
@@ -32,6 +32,7 @@ const MainCont = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 70px;
+  background-color: white;
   h2,
   h1,
   p {
