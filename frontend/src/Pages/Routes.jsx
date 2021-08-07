@@ -21,10 +21,10 @@ export const Routes = () => {
         <Route exact path="/signup">
           <Signup />
         </Route>
-        <Route exact path="/chat">
+        {/* <Route exact path="/chat">
           <Stream />
-        </Route>
-        <Route exact path="/videoStream">
+        </Route> */}
+        <Route exact path="/videostream">
           <VideoStream />
         </Route>
         <Route>

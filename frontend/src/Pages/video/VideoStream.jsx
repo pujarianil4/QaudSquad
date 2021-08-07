@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Stream from "../Stream/Stream";
 export const VideoStream = () => {
   return (
     <>
@@ -13,7 +14,9 @@ export const VideoStream = () => {
             <p>Beginner</p>
           </Description>
         </VideoCont>
-        <ChatCont></ChatCont>
+        <ChatCont>
+          <Stream />
+        </ChatCont>
       </MainCont>
     </>
   );
