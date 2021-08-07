@@ -18,7 +18,7 @@ export const Home = () => {
       pathname: "/videostream",
       state: { username, group },
     });
-    console.log(group, username);
+    // console.log(group, username);
   };
 
   // const [setGroup,setUsername,joinGroupSubmitHandler] =UseSocket()
@@ -44,9 +44,9 @@ export const Home = () => {
           </Button>
         </Paper>
       </Modal>
-
+      <button onClick={() => handleCard()}>open</button>
       <div className={styles.home}>
-        <Welcome />
+        <Welcome handleFn={handleCard} />
       </div>
     </>
   );
