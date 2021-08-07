@@ -1,0 +1,14 @@
+.container{
+    width: 100%;
+    background-color: white;
+}
+.filter{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter select{
+    padding: 10px;
+}
