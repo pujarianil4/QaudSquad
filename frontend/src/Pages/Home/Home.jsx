@@ -7,6 +7,8 @@ import Button from "@material-ui/core/Button";
 import SocketContext from "../../Context/SocketContext";
 import { useHistory } from "react-router-dom";
 import Welcome from "../../Components/Welcome/Welcome";
+import Post from "../../Components/Post/Post";
+import AllPosts from "../../Components/Posts/AllPosts";
 export const Home = () => {
   const [username, setUsername] = useState("");
   const [group, setGroup] = useState("JavaScript");
@@ -47,6 +49,10 @@ export const Home = () => {
       <button onClick={() => handleCard()}>open</button>
       <div className={styles.home}>
         <Welcome handleFn={handleCard} />
+        
+        <div>
+          <AllPosts/>
+        </div>
       </div>
     </>
   );

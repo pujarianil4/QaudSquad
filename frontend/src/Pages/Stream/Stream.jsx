@@ -66,7 +66,7 @@ const Stream = () => {
         <MessagesCont className="chat-nessages">
           {messages.map((message, i) => (
             <Message color={color.map((item, i) => (item.message == message.text ? item.color : ""))} key={i + 1}>
-              <UserName>{message.username}: </UserName> <Msg>{message.text}</Msg> <Time>{message.time}</Time>
+              <UserName>{message.username[0].toUpperCase()+message.username.substring(1)}: </UserName> <Msg>{message.text}</Msg> <Time>{message.time}</Time>
             </Message>
           ))}
         </MessagesCont>
