@@ -1,8 +1,8 @@
-import { Grid } from '@material-ui/core';
-import React from 'react';
-import { useSelector } from 'react-redux';
-import Post from '../Post/Post';
-import styles from "./AllPosts.module.css"
+import { Grid } from "@material-ui/core";
+import React from "react";
+import { useSelector } from "react-redux";
+import Post from "../Post/Post";
+import styles from "./AllPosts.module.css";
 const AllPosts = () => {
    const cards = useSelector(state => state.auth.liveCards)
    
