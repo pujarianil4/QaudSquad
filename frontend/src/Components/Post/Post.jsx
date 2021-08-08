@@ -37,7 +37,7 @@ const Post = ({ item }) => {
             <div className={styles.user}>
               <div className={styles.avatar}>A</div>
               <div className={styles.userName}>
-                <h2>{author.name}</h2>
+                <h2>{author?.name}</h2>
                 <p>{level}</p>
               </div>
             </div>
