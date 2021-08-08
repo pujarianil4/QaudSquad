@@ -1,16 +1,28 @@
 import { Button, Paper } from "@material-ui/core";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Post.module.css";
 import { useHistory } from "react-router-dom"
 import UseSocket from "../../Hooks/UseSocket";
 import {useSelector} from "react-redux"
+import SocketContext from "../../Context/SocketContext";
 const Post = ({item}) => {
   const {category, description, level, startFrom, title, user, twitchUserName} = item
   const [author, setAuthor] = useState("")
   const User= useSelector((state)=>state.auth.user)
   const history = useHistory()
-  const [setGroup,setUsername,joinGroupSubmitHandler] =UseSocket()
+  const [username, setUsername] = useState("");
+  const [group, setGroup] = useState("");
+  const socket = useContext(SocketContext);
+  
+  const joinGroupSubmitHandler = (e) => {
+    socket.emit("joinGroup", { username, group });
+    history.push({
+      pathname: `/videostream/${user}`,
+      state: { username, group },
+    });
+    // console.log(group, username);
+  };
   function findUser(user) {
     axios.get(`http://localhost:2244/users/${user}`)
       .then(res => {
@@ -24,7 +36,7 @@ const Post = ({item}) => {
 
   const handleJoin = () => {
     if(User){
-      history.push(`/room/${user}`)
+      // history.push(`/room/${user}`)
       setGroup(`${author.name}s room`)
       setUsername(User?.name)
       joinGroupSubmitHandler()

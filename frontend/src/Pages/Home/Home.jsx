@@ -10,20 +10,20 @@ import Welcome from "../../Components/Welcome/Welcome";
 import Post from "../../Components/Post/Post";
 import AllPosts from "../../Components/Posts/AllPosts";
 export const Home = () => {
-  const [username, setUsername] = useState("");
-  const [group, setGroup] = useState("");
-  const socket = useContext(SocketContext);
-  const history = useHistory();
-  const joinGroupSubmitHandler = (e) => {
-    socket.emit("joinGroup", { username, group });
-    history.push({
-      pathname: "/videostream",
-      state: { username, group },
-    });
-    // console.log(group, username);
-  };
+  // const [username, setUsername] = useState("");
+  // const [group, setGroup] = useState("");
+  // const socket = useContext(SocketContext);
+  // const history = useHistory();
+  // const joinGroupSubmitHandler = (e) => {
+  //   socket.emit("joinGroup", { username, group });
+  //   history.push({
+  //     pathname: "/videostream",
+  //     state: { username, group },
+  //   });
+  //   // console.log(group, username);
+  // };
 
-   //const [setGroup,setUsername,joinGroupSubmitHandler] =UseSocket()
+   const [setGroup,setUsername,joinGroupSubmitHandler] =UseSocket()
   const [open, setOpen] = useState(false);
 
   const handleCard = () => {
