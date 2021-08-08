@@ -43,6 +43,7 @@ io.on('connection',(socket)=>{
         .emit('message',formateMessage(chatBotName,`${user.username} has joined the chat`))
 
 
+//${user.username[0].toUpperCase()+user.username.substring(1).toLowerCase()}
          //send list of users in the group
         io.to(group).emit('groupUsers',
         {group,users:getGroupUsers(user.group)})
