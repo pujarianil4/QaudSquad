@@ -12,14 +12,14 @@ const UseSocket = () => {
      
         socket.emit("joinGroup",{username,group})
         history.push({
-            pathname:"/chat",
+            pathname:"/videostream",
             state:{username,group}
         })
 
         console.log(group,username);
     }
 
-    return [setUsername,setGroup,joinGroupSubmitHandler]
+    return [setGroup,setUsername,joinGroupSubmitHandler]
 };
 
 export default UseSocket;

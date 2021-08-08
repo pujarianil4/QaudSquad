@@ -3,12 +3,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from "./Post.module.css";
 import { useHistory } from "react-router-dom"
-
+import UseSocket from "../../Hooks/UseSocket";
+import {useSelector} from "react-redux"
 const Post = ({item}) => {
   const {category, description, level, startFrom, title, user, twitchUserName} = item
   const [author, setAuthor] = useState("")
+  const User= useSelector((state)=>state.auth.user)
   const history = useHistory()
-
+  const [setGroup,setUsername,joinGroupSubmitHandler] =UseSocket()
   function findUser(user) {
     axios.get(`http://localhost:2244/users/${user}`)
       .then(res => {
@@ -21,8 +23,17 @@ const Post = ({item}) => {
   }
 
   const handleJoin = () => {
+    if(User){
       history.push(`/room/${user}`)
+      setGroup(`${author.name}s room`)
+      setUsername(User?.name)
+      joinGroupSubmitHandler()
+    }
+     
+
   }
+
+  
 
   useEffect(() => {
     findUser(user)

@@ -40,9 +40,9 @@ io.on('connection',(socket)=>{
         // Send nortification to existing members ====Broadcast
 
         socket.broadcast.to(user.group)
-        .emit('message',formateMessage(chatBotName,`${user.username[0].toUpperCase()+user.username.substring(1).toLowerCase()} has joined the chat`))
+        .emit('message',formateMessage(chatBotName,` has joined the chat`))
 
-
+//${user.username[0].toUpperCase()+user.username.substring(1).toLowerCase()}
          //send list of users in the group
         io.to(group).emit('groupUsers',
         {group,users:getGroupUsers(user.group)})
