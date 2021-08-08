@@ -39,13 +39,13 @@ const Stream = () => {
     if (doubt) {
       let p = {
         message: message,
-        color: "#e6ffe6",
+        color: "#99ffff",
       };
       setColor([...color, p]);
     } else if (mistake) {
       let p = {
         message: message,
-        color: "#e6ffff",
+        color: "  #99ff99",
       };
       setColor([...color, p]);
     }
@@ -67,10 +67,8 @@ const Stream = () => {
         <MessagesCont className="chat-nessages">
           {messages.map((message, i) => (
             <Message color={color.map((item, i) => (item.message == message.text ? item.color : ""))} key={i + 1}>
-              {
-                color.map((item, i) => (item.message == message.text ? console.log(item.color,message.text,item.message) : console.log(item.color,message.text,item.message) ))
-              }
-              <UserName>{message.username[0].toUpperCase()+message.username.substring(1)} </UserName> <Msg>{message.text}</Msg> <Time>{message.time}</Time>
+              
+              <UserName>{message.username && message.username[0].toUpperCase()+message.username.substring(1)} </UserName> <Msg>{message.text}</Msg> <Time>{message.time}</Time>
             </Message>
           ))}
         </MessagesCont>
@@ -91,10 +89,10 @@ const Stream = () => {
         </ChatInput>
       </>
       <BtnCont>
-        <button onClick={() => setDoubt(!doubt)} style={{ backgroundColor: `${doubt ? "#e6ffe6" : ""}` }}>
+        <button onClick={() => setDoubt(!doubt)} style={{ backgroundColor: `${doubt ? "#99ffff" : ""}` }}>
           Question
         </button>
-        <button onClick={() => setMistake(!mistake)} style={{ backgroundColor: `${mistake ? "#e6ffff" : ""}` }}>
+        <button onClick={() => setMistake(!mistake)} style={{ backgroundColor: `${mistake ? "#99ff99" : ""}` }}>
           Suggestion
         </button>
       </BtnCont>
