@@ -22,7 +22,7 @@ const io = socketio(server,{
 
 require('./routes')(app)
 
-const chatBotName = "Learning School"
+const chatBotName = "Code Streamer"
 
 
 io.on('connection',(socket)=>{

@@ -9560,7 +9560,14 @@
   "version" "11.0.4"
   dependencies:
     "@babel/code-frame" "7.10.4"
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 867907d9ffa4381862c7962bd96b598adfb9d7eb
+=======
 
+>>>>>>> 8345e8a7c10a45d6ac02d5e76d4690722699b0fc
     "address" "1.1.2"
     "browserslist" "4.14.2"
     "chalk" "2.4.2"
@@ -9620,7 +9627,74 @@
   "integrity" "sha512-hOQ5eOSkEJEXdpIKbnRyl04LhaWabkDPV+Ix97wqQX3T3d2NQ8DUblNXXtNMavc7DpswyQM6xfaN4HQDKNY2JA=="
   "resolved" "https://registry.npmjs.org/react-redux/-/react-redux-7.2.4.tgz"
   "version" "7.2.4"
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+    address "1.1.2"
+    browserslist "4.14.2"
+    chalk "2.4.2"
+    cross-spawn "7.0.3"
+    detect-port-alt "1.1.6"
+    escape-string-regexp "2.0.0"
+    filesize "6.1.0"
+    find-up "4.1.0"
+    fork-ts-checker-webpack-plugin "4.1.6"
+    global-modules "2.0.0"
+    globby "11.0.1"
+    gzip-size "5.1.1"
+    immer "8.0.1"
+    is-root "2.1.0"
+    loader-utils "2.0.0"
+    open "^7.0.2"
+    pkg-up "3.1.0"
+    prompts "2.4.0"
+    react-error-overlay "^6.0.9"
+    recursive-readdir "2.2.2"
+    shell-quote "1.7.2"
+    strip-ansi "6.0.0"
+    text-table "0.2.0"
 
+react-dom@^17.0.2:
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
+  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    scheduler "^0.20.2"
+
+react-error-overlay@^6.0.9:
+  version "6.0.9"
+  resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.9.tgz"
+  integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
+
+react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0, "react-is@^16.8.0 || ^17.0.0", react-is@^16.8.1:
+  version "16.13.1"
+  resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
+  integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-is@^17.0.1:
+  version "17.0.1"
+  resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.1.tgz"
+  integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+
+react-livestream@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/react-livestream/-/react-livestream-1.0.11.tgz#8a6013ad6c3a9ac92d5d7e30fe8538d72da288f4"
+  integrity sha512-OvZV7vujscFh9InnFtnUcx78/qf6lC7M+QA/NuG6/4ZE9acWxzTv73lqKuBL8keYeu+2ngeRWfKV5ZaVLz+JmA==
+  dependencies:
+    styled-components "^5.0.1"
+
+react-redux@^7.2.4:
+  version "7.2.4"
+  resolved "https://registry.npmjs.org/react-redux/-/react-redux-7.2.4.tgz"
+  integrity sha512-hOQ5eOSkEJEXdpIKbnRyl04LhaWabkDPV+Ix97wqQX3T3d2NQ8DUblNXXtNMavc7DpswyQM6xfaN4HQDKNY2JA==
+>>>>>>> 458774134c81a390e084750e15b18020db9e581e
+>>>>>>> 867907d9ffa4381862c7962bd96b598adfb9d7eb
+=======
+
+>>>>>>> 8345e8a7c10a45d6ac02d5e76d4690722699b0fc
   dependencies:
     "@babel/runtime" "^7.12.1"
     "@types/react-redux" "^7.1.16"
@@ -9739,12 +9813,31 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 867907d9ffa4381862c7962bd96b598adfb9d7eb
+=======
 
+>>>>>>> 8345e8a7c10a45d6ac02d5e76d4690722699b0fc
 "react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.13.1", "react@^16.8.0 || ^17.0.0", "react@^16.8.3 || ^17", "react@^17.0.2", "react@>= 16", "react@>= 16.8.0", "react@>=15", "react@>=16.6.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+react@^17.0.2:
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
+  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
+>>>>>>> 458774134c81a390e084750e15b18020db9e581e
+>>>>>>> 867907d9ffa4381862c7962bd96b598adfb9d7eb
+=======
 
+>>>>>>> 8345e8a7c10a45d6ac02d5e76d4690722699b0fc
   dependencies:
     "loose-envify" "^1.1.0"
     "object-assign" "^4.1.1"
@@ -11061,11 +11154,27 @@
     "loader-utils" "^2.0.0"
     "schema-utils" "^2.7.0"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 867907d9ffa4381862c7962bd96b598adfb9d7eb
 "styled-components@^5.0.1", "styled-components@^5.3.0", "styled-components@>= 2":
   "integrity" "sha512-bPJKwZCHjJPf/hwTJl6TbkSZg/3evha+XPEizrZUGb535jLImwDUdjTNxXqjjaASt2M4qO4AVfoHJNe3XB/tpQ=="
   "resolved" "https://registry.npmjs.org/styled-components/-/styled-components-5.3.0.tgz"
   "version" "5.3.0"
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+styled-components@^5.0.1, styled-components@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.npmjs.org/styled-components/-/styled-components-5.3.0.tgz"
+  integrity sha512-bPJKwZCHjJPf/hwTJl6TbkSZg/3evha+XPEizrZUGb535jLImwDUdjTNxXqjjaASt2M4qO4AVfoHJNe3XB/tpQ==
+>>>>>>> 458774134c81a390e084750e15b18020db9e581e
+>>>>>>> 867907d9ffa4381862c7962bd96b598adfb9d7eb
+=======
 
+>>>>>>> 8345e8a7c10a45d6ac02d5e76d4690722699b0fc
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/traverse" "^7.4.5"
