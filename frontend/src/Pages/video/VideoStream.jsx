@@ -21,7 +21,7 @@ export const VideoStream = () => {
   React.useEffect(() => {
     getData();
   }, []);
-  console.log(data);
+
   return (
     <>
       <MainCont>
