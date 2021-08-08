@@ -5,7 +5,7 @@ import Post from '../Post/Post';
 import styles from "./AllPosts.module.css"
 const AllPosts = () => {
    const cards = useSelector(state => state.auth.liveCards)
-   console.log(cards)
+   
     return (
         <div className={styles.container}>
             <div className={styles.filter} >
@@ -17,7 +17,7 @@ const AllPosts = () => {
              </select>
             </div>
             <div className={styles.all_posts}>
-                   {cards?.map(item => (
+                   {cards.length>0&&cards?.map(item => (
                        <Post  item={item}/>
                    ))}
             </div>
