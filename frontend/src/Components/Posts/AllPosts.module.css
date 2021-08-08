@@ -12,3 +12,12 @@
 .filter select{
     padding: 10px;
 }
+
+.all_posts {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    /* define the number of grid columns */
+    gap: 35px;
+    grid-template-columns: repeat(2, 1fr);
+}

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import SocketContext from "../../Context/SocketContext";
 import SendIcon from "@material-ui/icons/Send";
+import styles from './Stream.module.css'
 const Stream = () => {
   const [groupUsers, setGroupUsers] = useState([]);
   const [message, setMessage] = useState("");
@@ -66,7 +67,7 @@ const Stream = () => {
         <MessagesCont className="chat-nessages">
           {messages.map((message, i) => (
             <Message color={color.map((item, i) => (item.message == message.text ? item.color : ""))} key={i + 1}>
-              <UserName>{message.username[0].toUpperCase()+message.username.substring(1)}: </UserName> <Msg>{message.text}</Msg> <Time>{message.time}</Time>
+              <UserName>{message.username[0].toUpperCase()+message.username.substring(1)} </UserName> <Msg>{message.text}</Msg> <Time>{message.time}</Time>
             </Message>
           ))}
         </MessagesCont>
@@ -80,7 +81,7 @@ const Stream = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <button className="btn">
+            <button className={styles.sendbtn}>
               <SendIcon color="primary" fontSize="small" />
             </button>
           </form>
@@ -178,19 +179,22 @@ const Message = styled.div`
 const UserName = styled.div`
   width: 120px;
   margin-left: 10px;
-  font-size: 14px;
+  font-size: 10px;
+  font-weight:700;
+  color:#0e72ed;
 `;
 
 const Msg = styled.div`
-  font-size: 14px;
+  font-size: 12px;
   width: 280px;
   margin-left: 15px;
+  font-weight:600;
 `;
 const Time = styled.div`
   width: 50px;
   margin-right: 5px;
   color: gray;
-  font-size: 10px;
+  font-size: 9px;
 `;
 
 const BtnCont = styled.div`
