@@ -23,7 +23,7 @@ export const Home = () => {
   //   // console.log(group, username);
   // };
 
-   const [setGroup,setUsername,joinGroupSubmitHandler] =UseSocket()
+  const [setGroup, setUsername, joinGroupSubmitHandler] = UseSocket();
   const [open, setOpen] = useState(false);
 
   const handleCard = () => {
@@ -46,12 +46,12 @@ export const Home = () => {
           </Button>
         </Paper>
       </Modal>
-      <button onClick={() => handleCard()}>open</button>
+      {/* <button onClick={() => handleCard()}>open</button> */}
       <div className={styles.home}>
         <Welcome handleFn={handleCard} />
-        
+
         <div>
-          <AllPosts/>
+          <AllPosts />
         </div>
       </div>
     </>

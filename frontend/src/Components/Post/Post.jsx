@@ -45,7 +45,7 @@ const Post = ({ item }) => {
 
   useEffect(() => {
     findUser(user);
-    setGroup(`${title}s room`);
+    setGroup(`${title} room`);
     setUsername(User?.name);
   }, [item]);
 
