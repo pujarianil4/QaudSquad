@@ -28,7 +28,7 @@ export const VideoStream = () => {
         <VideoCont>
           <VideoPlayer>
             <iframe
-              src={`https://player.twitch.tv/?channel=${data?.twitchUserName}&parent=localhost`}
+              src={`https://player.twitch.tv/?channel=starktony44&parent=localhost`}
               frameborder="0"
               allowfullscreen="true"
               scrolling="no"
