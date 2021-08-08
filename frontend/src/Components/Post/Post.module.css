@@ -1,89 +1,91 @@
-.post{
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
+.post {
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.356), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: linear-gradient(to right, #a7cfff8a, #ffffff);
+  border-radius: 40px;
 }
 .post:hover {
-    /* transform: scale(1.05); */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* transform: scale(1.05); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.userinfo{
-    display: flex;
-    justify-content: space-between;
+.userinfo {
+  display: flex;
+  justify-content: space-between;
 }
 
 .user {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.avatar{
-    width: 50px;
-    height: 50px;
-    background-color: teal;
-    border-radius: 50%;
-    text-align: center;
-    align-content: center;
-    font-size: 30px;
-    color: white;
+.avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #0e72ed;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
 }
 
-.description img{
-width: 100%;
-height: 220px;
-transition: all 1s ease;
-border-radius: 8px;
-/* margin: 2px; */
+.description img {
+  width: 100%;
+  height: 220px;
+  transition: all 1s ease;
+  border-radius: 8px;
+  /* margin: 2px; */
 }
 
 .description img:hover {
-    /* transition: transform .2s; */
-    transform: scale(1.05)
+  /* transition: transform .2s; */
+  transform: scale(1.05);
 }
 
-.userName h2{
-margin: 0px 10px ;
-margin-bottom: 0px;
+.userName h2 {
+  margin: 0px 10px;
+  margin-bottom: 0px;
 }
 
-.userName p{
-    margin: 0px 10px;
-    color: green;
+.userName p {
+  margin: 0px 10px;
+  color: green;
 }
 
-.live{
-    margin: 10px;
-    margin-left: 50px;
+.live {
+  margin: 10px;
+  margin-left: 50px;
 }
 .live h4 span {
-    color: red;
+  color: red;
 }
 
 .description {
-    margin: 10px;
+  margin: 10px;
 }
 
-.description h1{
-    font-size: 18px;
+.description h1 {
+  font-size: 18px;
 }
 
-.description h3{
-    font-size: 18px;
-    margin-top: 5px;
+.description h3 {
+  font-size: 18px;
+  margin-top: 5px;
 }
-.description p{
-    margin: 10px 0px;
-    
-    height: 70px;
-    overflow: hidden
+.description p {
+  margin: 10px 0px;
+
+  height: 70px;
+  overflow: hidden;
 }
 
-.description h3 span{
-    color: gray;
+.description h3 span {
+  color: #3f51b5;
 }
 
 .button {
-    width: 100%;
+  width: 100%;
 }

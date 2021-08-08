@@ -31,7 +31,7 @@ const Post = ({ item }) => {
 
   return (
     <Link style={{ textDecoration: "none" }} to={`/videostream/${_id}`}>
-      <div>
+      <div className={styles.postCont}>
         <Paper className={styles.post}>
           <div className={styles.userinfo}>
             <div className={styles.user}>
